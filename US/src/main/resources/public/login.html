@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+login
+<br>
+<form>
+    <label>
+        username:<input id="username"/>
+    </label>
+    <label>
+        password:<input id="password"/>
+    </label>
+    <button id="login">login</button>
+</form>
+
+
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $('#login').click(function () {
+            var username = $('#username').val();
+            var password = $('#password').val();
+            $.ajax({
+                url: '/user/login',
+                type: 'post',
+                data: {
+                    username: username,
+                    password: password
+                },
+                success: function () {
+                    alert(11111111);
+                }
+            })
+        })
+    })
+</script>
+
+</body>
+</html>
